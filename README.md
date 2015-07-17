@@ -34,7 +34,7 @@ Given these two sets of complimentary advantages and shortcomings, this module u
 ## Limitations
 
 Still, there are two main areas that will generate false positives:
-* CSS selectors that depend on JavaScript DOM mutations, e.g. "<ul class="draggable draggable-active...">`
+* CSS selectors that depend on JavaScript DOM mutations, e.g. `"<ul class="draggable draggable-active...">`
 * Logged-in state, e.g. `<% if $Member %>$CommentForm<% end_if %>`.
 
 The tool should not be used without discretion, but rather, provide the lion's share of the CSS that needs to be removed.
