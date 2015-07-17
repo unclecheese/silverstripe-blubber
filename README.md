@@ -7,6 +7,7 @@ This module provides a task that scans your theme directory for css files, and c
 `composer require unclecheese/silverstripe-blubber:dev-master`
 
 ## Screenshot
+<img src="https://raw.githubusercontent.com/unclecheese/silverstripe-blubber/master/images/Screenshot%202015-07-17%2013.10.16.png" width="600">
 
 ## How it works
 
