@@ -12,7 +12,7 @@
 	],
 	"require": {
 		"sabberworm/php-css-parser": "*",
-		"symfony/dom-crawler": "2.6.*@stable",
+		"symfony/dom-crawler": "2.5.*",
 		"symfony/css-selector": "2.5.*",
 		"symfony/finder": "2.6.*@stable"
 	}
