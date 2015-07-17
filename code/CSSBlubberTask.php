@@ -150,7 +150,7 @@ class CSSBlubberTask extends CliController {
 	protected function gatherCSSFiles() {
 		$this->output->writeln('Scanning theme "'.$this->theme.'" for CSS files');
 
-		$this->finder->files()->in($this->themeDir)->name('*.css');
+		$this->finder->files()->in($this->themeDir)->name('*.css')->notName('*.blubber.css')->notName('*.lean.css');
 		
 		foreach($this->finder as $file) {
 			$filename = basename($file->getRealPath());
