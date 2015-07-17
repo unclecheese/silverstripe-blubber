@@ -50,12 +50,14 @@ CSSBlubberTask:
     - RedirectorPage
   limits: {}
   default_limit: 3
+  theme_css_dir: 'base/production/css/'
 ```
 
 * `extra_dataobjects`: Allows you to specify a list of DataObjects whose URLs you want spidered, e.g. `Product`, `ForumPost`. **NB**: these objects must have a `Link()` method. 
 * `omit`: Classes to omit from the spider
 * `limits`: A map of class names to the number of records that should be sampled., e.g. `{ Product: 10 }` will ensure that no more than 10 Product objects get their HTML scanned. If there are 1,000 products in the database, there's no need in scanning each one. They all use the same template and CSS, with little variation.
 * `default_limit`: If no limit is specified for the class, this is the number that's applied.
+* `theme_css_dir`: Specify a path where CSS resides for a theme
 
 
 ## Todo
