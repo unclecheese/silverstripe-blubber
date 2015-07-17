@@ -31,10 +31,10 @@ class CSSBlubberTask extends CliController {
 	protected $theme;
 
 	/**
-	 * An absolute path to the theme directory
+	 * An absolute path to the directory where CSS resides for this project
 	 * @var string
 	 */
-	protected $themeDir;
+	protected $cssDir;
 
 	/**
 	 * A reference to the file finder tool
@@ -53,6 +53,13 @@ class CSSBlubberTask extends CliController {
 	 * @var array
 	 */
 	protected $samples = array ();
+
+	/**
+	 * An path where CSS resides
+	 * @var string
+	 * @config
+	 */
+	private static $theme_css_dir;
 
 	/**
 	 * Constructor
@@ -75,7 +82,9 @@ class CSSBlubberTask extends CliController {
 	 */
 	public function index() {
 		$this->theme = Config::inst()->get('SSViewer', 'theme');
-		$this->themeDir = Controller::join_links(BASE_PATH, $this->ThemeDir());
+		$this->cssDir = self::config()->theme_css_dir
+							? Controller::join_links(BASE_PATH, self::config()->theme_css_dir)
+							: Controller::join_links(BASE_PATH, $this->ThemeDir());
 		
 		$this->gatherCSSFiles();
 		$this->output->writeln();
@@ -150,7 +159,7 @@ class CSSBlubberTask extends CliController {
 	protected function gatherCSSFiles() {
 		$this->output->writeln('Scanning theme "'.$this->theme.'" for CSS files');
 
-		$this->finder->files()->in($this->themeDir)->name('*.css');
+		$this->finder->files()->in($this->cssDir)->name('*.css');
 		
 		foreach($this->finder as $file) {
 			$filename = basename($file->getRealPath());
