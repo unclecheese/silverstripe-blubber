@@ -1,0 +1,19 @@
+{
+	"name": "unclecheese/silverstripe-blubber",
+	"description": "Identifies unused CSS in your SilverStripe project",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "css"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Uncle Cheese",
+			"email": "unclecheese@leftandmain.com"
+		}
+	],
+	"require": {
+		"sabberworm/php-css-parser": "*",
+		"symfony/dom-crawler": "2.6.*@stable",
+		"symfony/css-selector": "2.3.*@stable",
+		"symfony/finder": "2.6.*@stable"
+	}
+}

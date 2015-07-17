@@ -1,0 +1,19 @@
+---
+Name: 'blubber'
+---
+Injector:
+  CSSBlubberTask:
+    constructor:
+      0: %$Finder
+      1: %$DOMCrawler
+      2: %$Outputter
+  Finder:
+    class: 'Symfony\Component\Finder\Finder'
+  DOMCrawler:
+    class: 'Symfony\Component\DomCrawler\Crawler'
+CSSBlubberTask:
+  extra_dataobjects: []
+  omit:
+    - RedirectorPage
+  limits: {}
+  default_limit: 3
